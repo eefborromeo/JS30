@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="65" src="sounds/clap.wav" type></audio>
     <audio data-key="83" src="sounds/hihat.wav"></audio>
     <audio data-key="68" src="sounds/kick.wav"></audio>
     <audio data-key="70" src="sounds/openhat.wav"></audio>
@@ -57,13 +57,16 @@
 
     <script>
       // 0. Listen to keydown
-      window.addEventListener("keydown", function(e) {
-        const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        console.log(sound);
-        // 1. Select the sound
-        // 2. If key and data-key match, play sound
-        // 3. Select the key
-        // 4. If sound is playing, add .playing to element
+      window.addEventListener('keydown', function(e) {
+        // 1. Select the keyCode
+        const key = e.keyCode;
+        // 2. Select the sound
+        const sound = document.querySelector(`audio[data-key="${key}"]`);
+        // 3. If key and data-key match, play sound
+        if (!sound) return;
+        sound.currentTime = 0;
+        sound.play();
+        // 4. Select keys
       });
     </script>
   </body>
