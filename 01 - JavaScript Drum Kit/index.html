@@ -68,10 +68,19 @@
         sound.play();
         // 4. Select keys
         const key = document.querySelector(`.key[data-key="${keyKeyCode}"]`);
-        console.log(key);
-        // 5. add class and CSS transition
+        // 5. add .playing class
         key.classList.add('playing');
       });
+
+      // 6. Remove .playing class
+      const keys = document.querySelectorAll('.keys');
+      keys.forEach(key =>
+        key.addEventListener('transitionend', function(e) {
+          if (e.propertyName === 'transform') {
+            e.target.classList.remove('playing');
+          }
+        })
+      );
     </script>
   </body>
 </html>
