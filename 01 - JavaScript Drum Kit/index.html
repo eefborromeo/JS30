@@ -59,14 +59,16 @@
       // 0. Listen to keydown
       window.addEventListener('keydown', function(e) {
         // 1. Select the keyCode
-        const key = e.keyCode;
+        const keyKeyCode = e.keyCode;
         // 2. Select the sound
-        const sound = document.querySelector(`audio[data-key="${key}"]`);
+        const sound = document.querySelector(`audio[data-key="${keyKeyCode}"]`);
         // 3. If key and data-key match, play sound
         if (!sound) return;
         sound.currentTime = 0;
         sound.play();
         // 4. Select keys
+        const key = document.querySelector(`.key[data-key="${keyKeyCode}"]`);
+        console.log(key);
       });
     </script>
   </body>
