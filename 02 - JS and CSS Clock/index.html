@@ -65,15 +65,23 @@
 
     <script>
       const secondsHand = document.querySelector('.second-hand');
+      const minutesHand = document.querySelector('.min-hand');
 
       function setDate() {
         // 1. Get current seconds
         const now = new Date();
         const seconds = now.getSeconds();
-        // a. get degrees for transform: rotate()
+        //  a. get seconds degrees for transform: rotate()
         const secondsDegrees = (seconds / 60) * 360;
-        // b. apply styles to rotate seconds hand
+        //  b. apply styles to rotate seconds hand
         secondsHand.style.transform = `rotate(${secondsDegrees + 90}deg)`;
+
+        // 2. Get current minutes
+        const minutes = now.getMinutes();
+        //  a. get minutes degrees for transform: rotate()
+        const minutesDegrees = (minutes / 60) * 360;
+        //  b. apply styles to rotate minutes hand
+        minutesHand.style.transform = `rotate(${minutesDegrees + 90}deg)`;
       }
 
       setInterval(setDate, 1000);
