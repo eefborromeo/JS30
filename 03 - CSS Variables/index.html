@@ -72,7 +72,9 @@
       const controls = document.querySelectorAll('.controls > input');
       // 3. Get document root and set CSS variable properties to data values
       function handleChange() {
-        console.log(this);
+        const root = document.documentElement;
+        const unit = this.dataset.sizing || '';
+        root.style.setProperty(`--${this.name}`, this.value + unit);
       }
       // 2. Attach event listeners for control inputs
       controls.forEach(control => {
