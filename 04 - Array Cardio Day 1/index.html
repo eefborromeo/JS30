@@ -111,10 +111,7 @@
       const name = people.sort(function (a, b) {
         const [aLast, aFirst] = a.split(', ');
         const [bLast, bFirst] = b.split(', ');
-        if (aLast > bLast) {
-          return 1;
-        }
-        return -1;
+        return aLast > bLast ? 1 : -1;
       });
       console.log(name);
 
