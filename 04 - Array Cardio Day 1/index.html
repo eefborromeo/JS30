@@ -133,6 +133,16 @@
         'car',
         'truck',
       ];
+
+      const sum = data.reduce(function (vehicle, count) {
+        if (!vehicle[count]) {
+          vehicle[count] = 0;
+        }
+        vehicle[count]++;
+        return vehicle;
+      }, {});
+
+      console.log(sum);
     </script>
   </body>
 </html>
