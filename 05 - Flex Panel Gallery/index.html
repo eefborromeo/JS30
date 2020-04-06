@@ -75,7 +75,7 @@
     }
 
     .panel p:first-child {
-      transform: translateY(-800%);
+      transform: translateY(-850%);
     }
     
     .panel p:nth-child(2) {
@@ -83,7 +83,7 @@
     }
 
     .panel p:last-child {
-      transform: translateY(800%);
+      transform: translateY(850%);
     }
 
     .panel.open {
@@ -140,7 +140,7 @@
       ? this.classList.toggle('open-active')
       : '';
   }
-  
+
   panels.forEach(panel => panel.addEventListener('click', addOpen));
   panels.forEach(panel => panel.addEventListener('transitionend', addOpenActive));
   </script>
