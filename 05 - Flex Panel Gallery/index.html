@@ -130,18 +130,18 @@
   <script>
   // Select panels
   const panels = document.querySelectorAll('.panel');
-  console.log(panels);
   // when panel is clicked toggle .open
   function addOpen() {
     this.classList.toggle('open');
   }
-  panels.forEach(panel => panel.addEventListener('click', addOpen));
   // when transitionends .add open-active
   function addOpenActive(e) {
     return e.propertyName.includes('flex')
       ? this.classList.toggle('open-active')
       : '';
   }
+  
+  panels.forEach(panel => panel.addEventListener('click', addOpen));
   panels.forEach(panel => panel.addEventListener('transitionend', addOpenActive));
   </script>
 
