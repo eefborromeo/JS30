@@ -24,6 +24,26 @@ const cities = [];
 fetch(endpoint)
   .then(response => response.json())
   .then(data => cities.push(...data));
+
+// 2. check for words that match city name
+// if input value matches city values then return city
+function wordMatch(cityInput) {
+  const regexp = new RegExp(`${cityInput}`, 'gi');
+  cities.filter(city => {
+    const cityName = city.city;
+    const stateName = city.state;
+    const { population } = city;
+    if (cityName.match(regexp) || stateName.match(regexp)) {
+      console.log(city);
+    }
+  });
+}
+
+const input = document.querySelector('.search');
+
+input.addEventListener('keyup', function() {
+  wordMatch(this.value);
+});
 </script>
 </body>
 </html>
