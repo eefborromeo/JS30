@@ -29,20 +29,28 @@ fetch(endpoint)
 // if input value matches city values then return city
 function wordMatch(cityInput) {
   const regexp = new RegExp(`${cityInput}`, 'gi');
-  cities.filter(city => {
-    const cityName = city.city;
-    const stateName = city.state;
-    const { population } = city;
-    if (cityName.match(regexp) || stateName.match(regexp)) {
-      console.log(city);
-    }
-  });
+  const matchedCity = cities.filter(
+    city => city.city.match(regexp) || city.state.match(regexp)
+  );
+  return matchedCity;
 }
 
 const input = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
 
+// 3. display cities in suggestions ul
 input.addEventListener('keyup', function() {
-  wordMatch(this.value);
+  const matchedCity = wordMatch(this.value);
+  const listItems = matchedCity
+    .map(
+      match =>
+        `<li>
+          <span class="name">${match.city}, ${match.state}</span>
+          <span class="population">${match.population}</span>
+        </li>`
+    )
+    .join('');
+  suggestions.innerHTML = listItems;
 });
 </script>
 </body>
