@@ -28,13 +28,14 @@
 
   // Drawing function
   function handleDraw(e) {
+  if (!isDrawing) return;
   console.log(e);
 }
 
   // Add mouse eventlistener
   canvas.addEventListener('mousemove', handleDraw);
-  canvas.addEventListener('mousedown', handleDraw);
-  canvas.addEventListener('mouseup', handleDraw;
+  canvas.addEventListener('mousedown', () => (isDrawing = true));
+  canvas.addEventListener('mouseup', () => (isDrawing = false));
   </script>
 
 <style>
