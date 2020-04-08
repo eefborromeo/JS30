@@ -29,7 +29,12 @@
   // Drawing function
   function handleDraw(e) {
   if (!isDrawing) return;
-  console.log(e);
+  ctx.strokeStyle = hue;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  // console.log(e);
 }
 
   // Add mouse eventlistener
