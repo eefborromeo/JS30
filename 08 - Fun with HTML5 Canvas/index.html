@@ -19,7 +19,8 @@
   let x = 0;
   let y = 0;
   let isDrawing = false;
-  const hue = 'blue';
+  let hue = 0;
+  let onDraw = true;
 
   // Set draw styles
   ctx.lineWidth = 15;
@@ -29,12 +30,22 @@
   // Drawing function
   function handleDraw(e) {
   if (!isDrawing) return;
-  ctx.strokeStyle = hue;
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(e.offsetX, e.offsetY);
   ctx.stroke();
   [x, y] = [e.offsetX, e.offsetY];
+
+  // change color
+  hue++;
+  if (hue >= 360) {
+      hue = 0;
+  }
+
+  // change lineWidth
+  ctx.lineWidth >= 200 || ctx.lineWidth <= 1 ? (onDraw = !onDraw) : onDraw;
+  onDraw ? ctx.lineWidth++ : ctx.lineWidth--;
 }
 
   // Add mouse eventlistener
