@@ -25,6 +25,16 @@
   ctx.lineWidth = 15;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+
+  // Drawing function
+  function handleDraw(e) {
+  console.log(e);
+}
+
+  // Add mouse eventlistener
+  canvas.addEventListener('mousemove', handleDraw);
+  canvas.addEventListener('mousedown', handleDraw);
+  canvas.addEventListener('mouseup', handleDraw;
   </script>
 
 <style>
