@@ -7,7 +7,20 @@
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
-</script>
+  // Retrieve canvas node on DOM
+  const canvas = document.getElementById('draw');
+  const ctx = canvas.getContext('2d');
+
+  // Make canvas width and height fullscreen
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Starter settngs
+  const x = 0;
+  const y = 0;
+  const isDrawing = false;
+  const hue = 'blue';
+  </script>
 
 <style>
   html, body {
