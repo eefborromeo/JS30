@@ -34,12 +34,15 @@
   ctx.moveTo(x, y);
   ctx.lineTo(e.offsetX, e.offsetY);
   ctx.stroke();
-  // console.log(e);
+  [x, y] = [e.offsetX, e.offsetY];
 }
 
   // Add mouse eventlistener
   canvas.addEventListener('mousemove', handleDraw);
-  canvas.addEventListener('mousedown', () => (isDrawing = true));
+  canvas.addEventListener('mousedown', e => {
+    isDrawing = true;
+    [x, y] = [e.offsetX, e.offsetY];
+  });
   canvas.addEventListener('mouseup', () => (isDrawing = false));
   </script>
 
