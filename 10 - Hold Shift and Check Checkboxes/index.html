@@ -107,7 +107,6 @@
       // check if shift key is pressed and checkbox is checked
       if (e.shiftKey && this.checked) {
         checkboxes.forEach(checkbox => {
-          console.log(checkbox);
           if (checkbox === this || checkbox === endCheck) {
             // If what was clicked is checked, and if the last thing I clicked is checked then there are checkboxes inbetween
             between = !between;
