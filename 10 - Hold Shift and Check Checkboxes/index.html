@@ -99,7 +99,12 @@
   // Select all checkboxes
   const checkboxes = document.querySelectorAll('.inbox input');
 
-  console.log(checkboxes);
+  // Add event listener for click
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', function(e) {
+      console.log(e);
+    });
+  });
 </script>
 </body>
 </html>
