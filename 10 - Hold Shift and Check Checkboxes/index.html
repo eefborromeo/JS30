@@ -103,14 +103,17 @@
   // Add event listener for click
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('click', function(e) {
+      let between = false;
       // check if shift key is pressed and checkbox is checked
       if (e.shiftKey && this.checked) {
         checkboxes.forEach(checkbox => {
           console.log(checkbox);
-          let between = false;
           if (checkbox === this || checkbox === endCheck) {
             // If what was clicked is checked, and if the last thing I clicked is checked then there are checkboxes inbetween
             between = !between;
+          }
+          if (between) {
+            checkbox.checked = true;
           }
         });
       }
