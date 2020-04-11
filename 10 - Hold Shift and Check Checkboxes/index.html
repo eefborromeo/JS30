@@ -102,7 +102,8 @@
   // Add event listener for click
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('click', function(e) {
-      console.log(e);
+      // check if shift key is pressed
+      console.log(e.shiftKey);
     });
   });
 </script>
