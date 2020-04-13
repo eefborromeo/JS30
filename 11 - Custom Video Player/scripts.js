@@ -11,4 +11,16 @@ function handlePlay() {
   video.paused ? video.play() : video.pause();
 }
 
+function handleToggle() {
+  video.paused ? (toggle.textContent = '►') : (toggle.textContent = '❚ ❚');
+}
+
 // Attach Event Listeners
+video.addEventListener('click', () => {
+  handlePlay();
+  handleToggle();
+});
+toggle.addEventListener('click', () => {
+  handlePlay();
+  handleToggle();
+});
