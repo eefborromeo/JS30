@@ -19,6 +19,10 @@ function handleVolume() {
   video.volume = parseFloat(volume.value);
 }
 
+function handlePlaybackRate() {
+  video.playbackRate = parseFloat(playbackRate.value);
+}
+
 // Attach Event Listeners
 video.addEventListener('click', () => {
   handlePlay();
@@ -32,3 +36,7 @@ toggle.addEventListener('click', () => {
 volume.addEventListener('mousemove', handleVolume);
 volume.addEventListener('mouseup', handleVolume);
 volume.addEventListener('mousedown', handleVolume);
+
+playbackRate.addEventListener('mousemove', handlePlaybackRate);
+playbackRate.addEventListener('mouseup', handlePlaybackRate);
+playbackRate.addEventListener('mousedown', handlePlaybackRate);
