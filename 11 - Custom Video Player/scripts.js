@@ -7,4 +7,8 @@ const playbackRate = document.querySelector('input[name="playbackRate"]');
 const playbackButtons = document.querySelectorAll('button[data-skip]');
 
 // Create Functons
+function handlePlay() {
+  video.paused ? video.play() : video.pause();
+}
+
 // Attach Event Listeners
