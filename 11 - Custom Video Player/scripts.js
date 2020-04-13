@@ -16,8 +16,11 @@ function handleToggle() {
 
 function handleRange() {
   video[this.name] = parseFloat(this.value);
-  console.log(this.name);
-  console.log(parseFloat(this.value));
+}
+
+function skip() {
+  video.currentTime += parseFloat(this.dataset.skip);
+  console.log(video.currentTime);
 }
 
 // Attach Event Listeners
@@ -25,6 +28,7 @@ video.addEventListener('click', () => {
   handlePlay();
   handleToggle();
 });
+
 toggle.addEventListener('click', () => {
   handlePlay();
   handleToggle();
@@ -34,4 +38,8 @@ buttonRange.forEach(button => {
   button.addEventListener('mousemove', handleRange);
   button.addEventListener('mouseup', handleRange);
   button.addEventListener('mousedown', handleRange);
+});
+
+playbackButtons.forEach(button => {
+  button.addEventListener('click', skip);
 });
