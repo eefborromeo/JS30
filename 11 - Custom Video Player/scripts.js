@@ -1,6 +1,7 @@
 // Select Elements
 const video = document.querySelector('.viewer');
-const progress = document.querySelector('.progress .progress__filled');
+const progress = document.querySelector('.progress');
+const progressBar = document.querySelector('.progress .progress__filled');
 const toggle = document.querySelector('.toggle');
 const buttonRange = document.querySelectorAll('input[type="range"]');
 const playbackButtons = document.querySelectorAll('button[data-skip]');
@@ -23,8 +24,13 @@ function skip() {
 }
 
 function handleProgress() {
-  const percent = (video.currentTime / video.duration) * 100;
-  progress.style.flexBasis = `${percent}%`;
+  const percent = (this.currentTime / this.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
+
+function scrub(e) {
+  const playTime = (e.offsetX / video.offsetWidth) * video.duration;
+  video.currentTime = playTime;
 }
 
 // Attach Event Listeners
@@ -48,3 +54,9 @@ buttonRange.forEach(button => {
 playbackButtons.forEach(button => {
   button.addEventListener('click', skip);
 });
+
+let mousedown = false;
+progress.addEventListener('click', e => scrub(e));
+progress.addEventListener('mousemove', e => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => (mousedown = true));
+progress.addEventListener('mouseup', () => (mousedown = false));
