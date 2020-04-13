@@ -2,8 +2,7 @@
 const video = document.querySelector('.viewer');
 const progress = document.querySelector('.progress');
 const toggle = document.querySelector('.toggle');
-const volume = document.querySelector('input[name="volume"]');
-const playbackRate = document.querySelector('input[name="playbackRate"]');
+const buttonRange = document.querySelectorAll('input[type="range"]');
 const playbackButtons = document.querySelectorAll('button[data-skip]');
 
 // Create Functons
@@ -15,12 +14,10 @@ function handleToggle() {
   video.paused ? (toggle.textContent = '►') : (toggle.textContent = '❚ ❚');
 }
 
-function handleVolume() {
-  video.volume = parseFloat(volume.value);
-}
-
-function handlePlaybackRate() {
-  video.playbackRate = parseFloat(playbackRate.value);
+function handleRange() {
+  video[this.name] = parseFloat(this.value);
+  console.log(this.name);
+  console.log(parseFloat(this.value));
 }
 
 // Attach Event Listeners
@@ -33,10 +30,8 @@ toggle.addEventListener('click', () => {
   handleToggle();
 });
 
-volume.addEventListener('mousemove', handleVolume);
-volume.addEventListener('mouseup', handleVolume);
-volume.addEventListener('mousedown', handleVolume);
-
-playbackRate.addEventListener('mousemove', handlePlaybackRate);
-playbackRate.addEventListener('mouseup', handlePlaybackRate);
-playbackRate.addEventListener('mousedown', handlePlaybackRate);
+buttonRange.forEach(button => {
+  button.addEventListener('mousemove', handleRange);
+  button.addEventListener('mouseup', handleRange);
+  button.addEventListener('mousedown', handleRange);
+});
