@@ -15,6 +15,10 @@ function handleToggle() {
   video.paused ? (toggle.textContent = '►') : (toggle.textContent = '❚ ❚');
 }
 
+function handleVolume() {
+  video.volume = parseFloat(volume.value);
+}
+
 // Attach Event Listeners
 video.addEventListener('click', () => {
   handlePlay();
@@ -24,3 +28,7 @@ toggle.addEventListener('click', () => {
   handlePlay();
   handleToggle();
 });
+
+volume.addEventListener('mousemove', handleVolume);
+volume.addEventListener('mouseup', handleVolume);
+volume.addEventListener('mousedown', handleVolume);
