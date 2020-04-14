@@ -61,11 +61,17 @@
 
     // Select elements
     const slidingImages = document.querySelectorAll('.slide-in');
+
+    function handleScrolling() {
+      slidingImages.forEach(image => {
+        // get bottom of page
+        const bottomOfPage = window.scrollY + window.innerHeight;
+        console.log(bottomOfPage);
+      });
+    }
     
     // Listen to window scrolling
-    window.addEventListener('scroll', e => {
-      console.log(e);
-    });
+    window.addEventListener('scroll', debounce(handleScrolling));
   </script>
 
   <style>
