@@ -7,9 +7,13 @@
 </head>
 <body>
 <script>
+  const keysPassed = [];
   // listen to keyup
   window.addEventListener('keyup', e => {
     console.log(e.key);
+    // push keys into array
+    keysPassed.push(e.key);
+    console.log(keysPassed);
   });
 </script>
 </body>
