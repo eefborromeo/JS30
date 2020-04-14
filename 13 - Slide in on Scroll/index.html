@@ -61,7 +61,11 @@
 
     // Select elements
     const slidingImages = document.querySelectorAll('.slide-in');
-    console.log(slidingImages);
+    
+    // Listen to window scrolling
+    window.addEventListener('scroll', e => {
+      console.log(e);
+    });
   </script>
 
   <style>
