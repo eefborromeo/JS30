@@ -11,12 +11,14 @@
   const code = 'rainbows';
   // listen to keyup
   window.addEventListener('keyup', e => {
-    console.log(e.key);
     // push keys into array
     keysPassed.push(e.key);
     // limit array length
     keysPassed.splice(-keysPassed.length - 1, keysPassed.length - code.length);
-    console.log(keysPassed);
+    // check if keysPassed contains code, then cornify
+    if (keysPassed.join('') === code) {
+      cornify_add();
+    }
   });
 </script>
 </body>
