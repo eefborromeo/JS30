@@ -70,6 +70,14 @@
         const imageHalfHeight = bottomOfPage - image.height / 2;
         // get bottom of image
         const bottomOfImage = image.offsetTop + image.height;
+
+        const isHalfWay = imageHalfHeight > image.offsetTop;
+        const isNotScrolledPast = window.scrollY < bottomOfImage;
+        if (isHalfWay && isNotScrolledPast) {
+          image.classList.add('active');
+        } else {
+          image.classList.remove('active');
+        }
       });
     }
     
