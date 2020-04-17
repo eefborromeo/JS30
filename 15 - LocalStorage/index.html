@@ -40,7 +40,20 @@
     };
 
     items.push(tapasItem);
+    populateList(items, itemsList);
     this.reset();
+  }
+
+  function populateList(plates, platesList) {
+    platesList.innerHTML = plates
+      .map(
+        (plate, i) =>
+          `<li>
+            <input type="checkbox" data-index="${i}" id="item${i}">
+            <label for="item${i}">${plate.name}</label>
+          </li>`
+      )
+      .join('');
   }
   
   // Event Listener
