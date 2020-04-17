@@ -52,7 +52,9 @@
       .map(
         (plate, i) =>
           `<li>
-            <input type="checkbox" data-index="${i}" id="item${i}">
+            <input type="checkbox" data-index="${i}" id="item${i}" ${
+            plate.done ? 'checked' : ''
+          }>
             <label for="item${i}">${plate.name}</label>
           </li>`
       )
@@ -62,7 +64,10 @@
   // Toggle done
   function toggleDone(e) {
     if (!e.target.matches('input')) return;
-    console.log(e.target);
+    const el = e.target;
+    const elIndex = el.dataset.index;
+    items[elIndex].done = !items[elIndex].done;
+    localStorage.setItem('item', JSON.stringify(items));
   }
   
   // Event Listener
