@@ -41,9 +41,12 @@
 
     items.push(tapasItem);
     populateList(items, itemsList);
+    // set to localStorage
+    localStorage.setItem('item', JSON.stringify(items));
     this.reset();
   }
 
+  // Populate List
   function populateList(plates, platesList) {
     platesList.innerHTML = plates
       .map(
