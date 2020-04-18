@@ -38,7 +38,14 @@
   // Get elements
   const hero = document.querySelector('.hero');
   const text = hero.querySelector('h1');
-  console.log(hero, text);
+
+  // Functions
+  function shadow(e) {
+    console.log(e);
+  }
+
+  // Event listener
+  hero.addEventListener('mousemove', shadow);
 </script>
 </body>
 </html>
