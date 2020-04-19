@@ -63,6 +63,16 @@ const bands = [
 ];
 
 const bandsList = document.querySelector('#bands');
+
+// sort bands alphabetically
+bands.sort(function(a, b) {
+  if (a < b) {
+    return -1;
+  }
+  return 1;
+});
+
+// render bands on DOM
 bandsList.innerHTML = bands.map(band => `<li>${band}</li>`).join('');
 </script>
 
