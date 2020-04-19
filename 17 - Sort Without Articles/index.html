@@ -65,15 +65,12 @@ const bands = [
 const bandsList = document.querySelector('#bands');
 
 // sort bands alphabetically
-bands.sort(function(a, b) {
-  if (
-    // sort bands without articles
-    a.replace(/a |the |an /i, '').trim() < b.replace(/a |the |an /i, '').trim()
-  ) {
-    return -1;
-  }
-  return 1;
-});
+bands.sort((a, b) =>
+  // sort bands without articles
+  a.replace(/a |the |an /i, '').trim() < b.replace(/a |the |an /i, '').trim()
+    ? -1
+    : 1
+);
 
 // render bands on DOM
 bandsList.innerHTML = bands.map(band => `<li>${band}</li>`).join('');
