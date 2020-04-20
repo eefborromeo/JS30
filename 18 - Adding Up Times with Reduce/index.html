@@ -194,10 +194,11 @@
         .split(':')
         // convert string to number
         .map(timeStamp => parseFloat(timeStamp));
-  
       // convert mins to secs and return secs
       return mins * 60 + secs;
-    });
+    })
+    // reduce to total seconds
+    .reduce((acc, val) => acc + val);
   </script>
 </body>
 </html>
