@@ -197,14 +197,21 @@
       // convert mins to secs and return secs
       return mins * 60 + secs;
     })
-    // reduce to total seconds
+    // reduce to total time in seconds
     .reduce((acc, val) => acc + val);
 
   // get hours
   const hours = Math.floor(seconds / 3600);
+  // get remaining seconds of hours
+  let remainingSecs = seconds;
+  remainingSecs %= 3600;
+
   // get minutes
-  const minutes = Math.floor(seconds / 60);
-  console.log(minutes);
+  const minutes = Math.floor(remainingSecs / 60);
+  // get remaining seconds of minutes
+  remainingSecs %= 60;
+
+  console.log(hours, minutes, remainingSecs);
   </script>
 </body>
 </html>
