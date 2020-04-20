@@ -199,6 +199,10 @@
     })
     // reduce to total seconds
     .reduce((acc, val) => acc + val);
+
+  // get hours
+  const hours = Math.floor(seconds / 3600);
+  console.log(hours);
   </script>
 </body>
 </html>
