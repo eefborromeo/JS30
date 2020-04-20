@@ -187,11 +187,15 @@
 
   // Map through array to get time
   const seconds = time
-  .map(listItem => listItem)
-  .map(item => {
-    // separate minutes and seconds
-      const [mins, secs] = item.dataset.time.split(':');
-    // convert mins to secs and return secs
+    .map(listItem => listItem)
+    .map(item => {
+      // separate minutes and seconds
+      const [mins, secs] = item.dataset.time
+        .split(':')
+        // convert string to number
+        .map(timeStamp => parseFloat(timeStamp));
+  
+      // convert mins to secs and return secs
       return mins * 60 + secs;
     });
   </script>
