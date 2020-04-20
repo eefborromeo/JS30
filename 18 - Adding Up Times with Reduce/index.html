@@ -189,6 +189,8 @@
   const seconds = time.map(listItem => listItem); .map(item => {
     // separate minutes and seconds
       const [mins, secs] = item.dataset.time.split(':');
+    // convert mins to secs and return secs
+      return mins * 60 + secs;
     });
   </script>
 </body>
