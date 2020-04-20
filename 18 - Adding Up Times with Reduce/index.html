@@ -182,9 +182,13 @@
     </li>
   </ul>
 <script>
-  // get data-time
-  const time = document.querySelectorAll('[data-time]');
-  console.log(time);
+  // Get data-time then convert to array
+  const time = Array.from(document.querySelectorAll('[data-time]'));
+
+  // Map through array to get time
+  time.map(stamp => {
+    console.log(stamp.dataset.time);
+  });
 </script>
 </body>
 </html>
