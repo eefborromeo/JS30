@@ -186,7 +186,10 @@
   const time = Array.from(document.querySelectorAll('[data-time]'));
 
   // Map through array to get time
-  const seconds = time.map(listItem => listItem).map(item => item.dataset.time);
+  const seconds = time.map(listItem => listItem); .map(item => {
+    // separate minutes and seconds
+      const [mins, secs] = item.dataset.time.split(':');
+    });
   </script>
 </body>
 </html>
