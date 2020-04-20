@@ -186,9 +186,7 @@
   const time = Array.from(document.querySelectorAll('[data-time]'));
 
   // Map through array to get time
-  time.map(stamp => {
-    console.log(stamp.dataset.time);
-  });
-</script>
+  const seconds = time.map(listItem => listItem).map(item => item.dataset.time);
+  </script>
 </body>
 </html>
