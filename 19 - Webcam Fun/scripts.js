@@ -36,3 +36,6 @@ function paintToCanvas() {
 }
 
 getVideo();
+
+// paint to canvas when video can play
+video.addEventListener('canplay', paintToCanvas);
