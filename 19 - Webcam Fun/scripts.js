@@ -20,4 +20,19 @@ function getVideo() {
     });
 }
 
+function paintToCanvas() {
+  // get video width and height
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+
+  // set canvas width and height to video width and height
+  canvas.width = width;
+  canvas.height = height;
+
+  return setInterval(() => {
+    // paint video element to canvas element
+    ctx.drawImage(video, 0, 0, width, height);
+  }, 16);
+}
+
 getVideo();
