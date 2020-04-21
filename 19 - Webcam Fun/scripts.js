@@ -35,6 +35,20 @@ function paintToCanvas() {
   }, 16);
 }
 
+function takePhoto() {
+  //  play the sound
+  snap.currentTime = 0;
+  snap.play();
+
+  // take the photo out of the canvas
+  const photoData = canvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = photoData;
+  link.setAttribute('download', 'photo');
+  link.innerHTML = `<img src="${photoData}" alt="photobooth" />`;
+  strip.insertBefore(link, strip.firstChild);
+}
+
 getVideo();
 
 // paint to canvas when video can play
