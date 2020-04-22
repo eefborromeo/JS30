@@ -10,10 +10,14 @@
   </div>
 
 <script>
+  // eslint-disable-next-line prettier/prettier
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  const recognition = new SpeechRecognition();
 
-</script>
+  // initiate speech recognition service
+  recognition.start();
+  </script>
 
 
   <style>
