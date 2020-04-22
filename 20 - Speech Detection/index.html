@@ -13,17 +13,29 @@
   // eslint-disable-next-line prettier/prettier
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+// Properties
   const recognition = new SpeechRecognition();
   // set language of speech recognition service
   recognition.lang = 'en-US';
   // allow interim results
   recognition.interimResults = true;
 
+// Elements
+const words = document.querySelector('.words');
+let p = document.createElement('p');
+
+// Event Listeners
   // attach event listener when word or phrase has been recognized
   recognition.addEventListener('result', function(e) {
-    const results = Array.from(e.results[0]).map(result =>
-      console.log(result.transcript)
-    );
+    const results = Array.from(e.results)
+      .map(result => result[0].transcript)
+      .join('');
+
+    if (e.results[0].isFinal) {
+      p.textContent = results;
+      p = document.createElement('p');
+      words.appendChild(p);
+    }
   });
 
   // attach event listener to start again after recognition
