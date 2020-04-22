@@ -19,6 +19,13 @@
   // allow interim results
   recognition.interimResults = true;
 
+  // attach eventlistener when word or phrase has been recognized
+  recognition.addEventListener('result', function(e) {
+    const results = Array.from(e.results[0]).map(result =>
+      console.log(result.transcript)
+    );
+  });
+
   // initiate speech recognition service
   recognition.start();
   </script>
