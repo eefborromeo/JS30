@@ -63,7 +63,10 @@
     const arrow = document.querySelector('.arrow');
     const speed = document.querySelector('.speed');
 
-    console.log(arrow, speed);
+    // Get current position
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position);
+    });
   </script>
 </body>
 </html>
