@@ -30,7 +30,13 @@
 
     // Get Elements
     const links = document.querySelectorAll('a');
-    console.log(links);
+
+    // Create highlight element
+    const highlight = document.createElement('span');
+    // Attach highlight class
+    highlight.classList = 'highlight';
+    // Attach highlight element to DOM
+    document.body.appendChild(highlight);
   </script>
 </body>
 </html>
