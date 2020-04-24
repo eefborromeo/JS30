@@ -43,7 +43,9 @@
       link.addEventListener('mouseenter', function() {
         // get element dimensions and positions
         const position = this.getBoundingClientRect();
-        console.log(position);
+        // set highlight width and height
+        highlight.style.width = `${position.width}px`;
+        highlight.style.height = `${position.height}px`;
       });
     });
   </script>
