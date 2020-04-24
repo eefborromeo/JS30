@@ -41,7 +41,9 @@
     // Attach event listener to each link
     links.forEach(link => {
       link.addEventListener('mouseenter', function() {
-        console.log(link);
+        // get element dimensions and positions
+        const position = this.getBoundingClientRect();
+        console.log(position);
       });
     });
   </script>
