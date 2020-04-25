@@ -47,9 +47,15 @@
     );
   }
 
-  // attach speechSynthesis to event listener
+  // Set voice
+  function setVoice() {
+    msg.voice = voices.find(voice => voice.name === this.value);
+  }
+
+  // Event Listeners
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
-  </script>
+  voicesDropdown.addEventListener('change', setVoice);
+</script>
 
 </body>
 </html>
