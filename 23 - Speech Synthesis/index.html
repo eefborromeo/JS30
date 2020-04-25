@@ -55,6 +55,7 @@
   // Set options
   function setOptions() {
     msg[this.name] = this.value;
+    speechSynthesis.cancel();
   }
 
   // Event Listeners
@@ -63,6 +64,8 @@
   options.forEach(option => {
     option.addEventListener('change', setOptions);
   });
+  speakButton.addEventListener('click', () => speechSynthesis.speak(msg));
+  stopButton.addEventListener('click', () => speechSynthesis.cancel());
 </script>
 
 </body>
