@@ -38,14 +38,18 @@
 
   // Populate list of voices to dropdown
   function populateVoices() {
+    // get voices
     voices = this.getVoices();
-  
-    voices.map(voice => console.log(voice));
+    // set options
+    voicesDropdown.innerHTML = voices.map(
+      voice =>
+        `<option value="${voice.name}">${voice.name} ${voice.lang}</option>`
+    );
   }
 
   // attach speechSynthesis to event listener
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
-</script>
+  </script>
 
 </body>
 </html>
