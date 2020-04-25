@@ -35,6 +35,16 @@
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+
+  // Populate list of voices to dropdown
+  function populateVoices() {
+    voices = this.getVoices();
+  
+    voices.map(voice => console.log(voice));
+  }
+
+  // attach speechSynthesis to event listener
+  speechSynthesis.addEventListener('voiceschanged', populateVoices);
 </script>
 
 </body>
