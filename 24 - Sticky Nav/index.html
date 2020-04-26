@@ -54,7 +54,15 @@
   </div>
 
 <script>
-</script>
+  // Get elements
+  const nav = document.querySelector('#main');
+  const topOfNav = nav.offsetTop;
+
+  // Listen to window on scroll
+  window.addEventListener('scroll', function(e) {
+    console.log(this.scrollY, topOfNav);
+  });
+  </script>
 
 </body>
 </html>
