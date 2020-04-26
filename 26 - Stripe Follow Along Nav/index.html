@@ -225,7 +225,17 @@
   const dropdownBackground = document.querySelector('.dropdownBackground');
   const nav = document.querySelector('.top');
 
-  console.log(links, dropdownBackground, nav);
+  function handleEnter() {
+    console.log('enter');
+  }
+
+  function handleLeave() {
+    console.log('leave');
+  }
+
+  // Event Listener
+  links.forEach(link => link.addEventListener('mouseenter', handleEnter));
+  links.forEach(link => link.addEventListener('mouseleave', handleLeave));
   </script>
 
 </body>
