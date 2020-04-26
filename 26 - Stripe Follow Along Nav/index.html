@@ -228,10 +228,22 @@
   function handleEnter() {
     this.classList.add('trigger-enter');
     setTimeout(() => this.classList.add('trigger-enter-active'), 150);
+    dropdownBackground.classList.add('open');
+
+    const dropdown = this.querySelector('.dropdown');
+    const dropdownCoord = dropdown.getBoundingClientRect();
+    const navCoord = nav.getBoundingClientRect();
+
+    dropdownBackground.style.width = `${dropdownCoord.width}px`;
+    dropdownBackground.style.height = `${dropdownCoord.height}px`;
+    dropdownBackground.style.transform = `translate(${
+      dropdownCoord.left
+  }px, ${dropdownCoord.top - navCoord.top}px)`;
   }
 
   function handleLeave() {
     this.classList.remove('trigger-enter', 'trigger-enter-active');
+    dropdownBackground.classList.remove('open');
   }
 
   // Event Listener
