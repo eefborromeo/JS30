@@ -61,6 +61,8 @@
   // Listen to window on scroll
   window.addEventListener('scroll', function(e) {
     if (this.scrollY >= topOfNav) {
+      // apply nav offsetHeight on body padding
+      document.body.style.paddingTop = `${nav.offsetHeight}px`;
       // apply .fixed-nav on body
       document.body.classList = 'fixed-nav';
     } else {
