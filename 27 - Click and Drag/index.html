@@ -37,25 +37,27 @@
 <script>
   // Get elements
   const items = document.querySelector('.items');
-  let isDown;
+  let isDown = false;
   let startX;
   let scrollLeft;
 
   // Event Listeners
   // mousedown
   items.addEventListener('mousedown', function() {
-    console.log('down');
+    isDown = true;
   });
   // mouseleave
   items.addEventListener('mouseleave', function() {
-    console.log('leave');
+    isDown = false;
   });
   // mouseup
   items.addEventListener('mouseup', function() {
-    console.log('up');
+    isDown = false;
   });
   // mousemove
   items.addEventListener('mousemove', function() {
+    // stop function
+    if (!isDown) return;
     console.log('move');
   });
 </script>
