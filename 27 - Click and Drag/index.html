@@ -45,14 +45,20 @@
   // mousedown
   items.addEventListener('mousedown', function() {
     isDown = true;
+    // set active class
+    items.classList.add('active');
   });
   // mouseleave
   items.addEventListener('mouseleave', function() {
     isDown = false;
+    // remove active class
+    items.classList.remove('active');
   });
   // mouseup
   items.addEventListener('mouseup', function() {
     isDown = false;
+    // remove active class
+    items.classList.remove('active');
   });
   // mousemove
   items.addEventListener('mousemove', function() {
