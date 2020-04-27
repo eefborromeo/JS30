@@ -43,7 +43,7 @@
 
   // Event Listeners
   // mousedown
-  items.addEventListener('mousedown', function(e) {
+  items.addEventListener('mousedown', e => {
     isDown = true;
     // set active class
     items.classList.add('active');
@@ -53,19 +53,19 @@
     scrollLeft = items.scrollLeft;
   });
   // mouseleave
-  items.addEventListener('mouseleave', function() {
+  items.addEventListener('mouseleave', () => {
     isDown = false;
     // remove active class
     items.classList.remove('active');
   });
   // mouseup
-  items.addEventListener('mouseup', function() {
+  items.addEventListener('mouseup', () => {
     isDown = false;
     // remove active class
     items.classList.remove('active');
   });
   // mousemove
-  items.addEventListener('mousemove', function(e) {
+  items.addEventListener('mousemove', e => {
     // stop function
     if (!isDown) return;
     e.preventDefault();
@@ -75,7 +75,6 @@
     const move = x - startX;
     // set items.scrollLeft
     items.scrollLeft = scrollLeft - move;
-    console.log(scrollLeft, move);
   });
 </script>
 
