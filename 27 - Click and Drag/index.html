@@ -43,10 +43,12 @@
 
   // Event Listeners
   // mousedown
-  items.addEventListener('mousedown', function() {
+  items.addEventListener('mousedown', function(e) {
     isDown = true;
     // set active class
     items.classList.add('active');
+    // get start X point on mousedown
+    startX = e.pageX;
   });
   // mouseleave
   items.addEventListener('mouseleave', function() {
@@ -61,10 +63,13 @@
     items.classList.remove('active');
   });
   // mousemove
-  items.addEventListener('mousemove', function() {
+  items.addEventListener('mousemove', function(e) {
     // stop function
     if (!isDown) return;
-    console.log('move');
+    e.preventDefault();
+    // get X point on move
+    const x = e.pageX;
+    console.log(x, startX);
   });
 </script>
 
