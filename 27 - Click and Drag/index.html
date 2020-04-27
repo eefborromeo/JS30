@@ -69,7 +69,9 @@
     e.preventDefault();
     // get X point on move
     const x = e.pageX;
-    console.log(x, startX);
+    // get difference between startX and x on mousemove
+    const move = x - startX;
+    console.log(move);
   });
 </script>
 
