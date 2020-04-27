@@ -49,6 +49,8 @@
     items.classList.add('active');
     // get start X point on mousedown
     startX = e.pageX;
+    // set scrollLeft
+    scrollLeft = items.scrollLeft;
   });
   // mouseleave
   items.addEventListener('mouseleave', function() {
@@ -71,7 +73,9 @@
     const x = e.pageX;
     // get difference between startX and x on mousemove
     const move = x - startX;
-    console.log(move);
+    // set items.scrollLeft
+    items.scrollLeft = scrollLeft - move;
+    console.log(scrollLeft, move);
   });
 </script>
 
