@@ -36,7 +36,9 @@
     speedBar.style.height = height;
     // update speedBar textContent
     speedBar.textContent = `${playbackRate.toFixed(2)}x`;
-    console.log(playbackRate);
+    // update video playbackrate
+    video.playbackRate = playbackRate;
+    console.log(video.playbackRate);
   });
 </script>
 </body>
