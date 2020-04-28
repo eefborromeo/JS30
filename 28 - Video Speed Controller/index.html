@@ -31,6 +31,10 @@
     const max = 4;
     // get playback rate
     const playbackRate = percent * (max - min) + min;
+    // get height
+    const height = `${Math.round(percent * 100)}%`;
+    speedBar.style.height = height;
+    console.log(speedBar);
   });
 </script>
 </body>
