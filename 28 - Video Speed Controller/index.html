@@ -34,7 +34,9 @@
     // get height
     const height = `${Math.round(percent * 100)}%`;
     speedBar.style.height = height;
-    console.log(speedBar);
+    // update speedBar textContent
+    speedBar.textContent = `${playbackRate.toFixed(2)}x`;
+    console.log(playbackRate);
   });
 </script>
 </body>
