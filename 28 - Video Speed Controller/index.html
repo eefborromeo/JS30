@@ -21,8 +21,9 @@
   const speedBar = document.querySelector('.speed-bar');
 
   // Event Listener
-  speed.addEventListener('mousemove', function() {
-    console.log('move');
+  speed.addEventListener('mousemove', function(e) {
+    // get point y of mouse
+    const y = e.pageY - this.offsetTop;
   });
 </script>
 </body>
