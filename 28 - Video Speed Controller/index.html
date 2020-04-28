@@ -24,6 +24,9 @@
   speed.addEventListener('mousemove', function(e) {
     // get point y of mouse
     const y = e.pageY - this.offsetTop;
+    // get percentage
+    const percent = y / this.clientHeight;
+    console.log(percent);
   });
 </script>
 </body>
