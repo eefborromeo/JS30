@@ -1,5 +1,6 @@
 const timeLeft = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
+const timerButtons = document.querySelectorAll('.timer__button');
 
 function timer(seconds) {
   // get time now
@@ -38,3 +39,10 @@ function displayEndTime(timestamp) {
     minutes < 10 ? '0' : ''
   }${minutes}`;
 }
+
+timerButtons.forEach(timerButton => {
+  timerButton.addEventListener('click', function() {
+    const seconds = parseInt(this.dataset.time);
+    timer(seconds);
+  });
+});
