@@ -43,9 +43,18 @@ function displayEndTime(timestamp) {
   }${minutes}`;
 }
 
+// Event Listener
 timerButtons.forEach(timerButton => {
   timerButton.addEventListener('click', function() {
     const seconds = parseInt(this.dataset.time);
     timer(seconds);
   });
+});
+
+const input = document.customForm;
+input.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const customMinutes = parseInt(this.minutes.value) * 60;
+  timer(customMinutes);
+  this.reset();
 });
