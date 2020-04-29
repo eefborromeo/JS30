@@ -1,15 +1,18 @@
 const timeLeft = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const timerButtons = document.querySelectorAll('.timer__button');
+let countdown;
 
 function timer(seconds) {
+  // clear existing timers
+  clearInterval(countdown);
   // get time now
   const now = Date.now();
   //   modify new time with added seconds
   const then = now + seconds * 1000;
   displayTimeLeft(seconds);
   displayEndTime(then);
-  const countdown = setInterval(function() {
+  countdown = setInterval(function() {
     seconds -= 1;
     if (seconds === 0) {
       clearInterval(countdown);
