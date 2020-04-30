@@ -48,7 +48,6 @@
     const hole = holes[index];
     // get another hole if the same hole appears consecutively
     if (lastHole === hole) {
-      console.log('the same hole');
       return randomHole();
     }
     lastHole = hole;
@@ -69,7 +68,7 @@
     // show mole
     mole.classList.add('up');
     // remove mole after time
-    setTimeout(function() {
+    setTimeout(() => {
       mole.classList.remove('up');
       // keep showing moles if stop game is false
       if (!stopGame) peep();
@@ -86,23 +85,22 @@
     // show moles
     peep();
     // stop game after 10 secs
-    setTimeout(function() {
-      console.log('stop game');
+    setTimeout(() => {
       stopGame = true;
     }, 10000);
   }
 
+  function bonk(e) {
+    if (e.isTrusted) {
+      // update score
+      score++;
+      // show score
+      scoreBoard.textContent = score;
+    }
+  }
+
   // update scoreboard if mole is clicked
-  moles.forEach(mole =>
-  mole.addEventListener('click', function(e) {
-      if (e.isTrusted) {
-        // update score
-        score++;
-        // show score
-        scoreBoard.textContent = score;
-      }
-    })
-);
+  moles.forEach(mole => mole.addEventListener('click', bonk));
 </script>
 </body>
 </html>
