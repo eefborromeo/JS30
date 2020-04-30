@@ -36,7 +36,22 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  let lastHole;
 
+  // create function to choose random mole in hole
+  function randomHole() {
+    // get random index
+    const index = Math.floor(Math.random() * holes.length);
+    // get random hole
+    const hole = holes[index];
+    // get another hole if the same hole appears consecutively
+    if (lastHole === hole) {
+      console.log('the same hole');
+      randomHole();
+    }
+    console.log(hole);
+    lastHole = hole;
+  }
 </script>
 </body>
 </html>
