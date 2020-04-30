@@ -37,6 +37,7 @@
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
   let lastHole;
+  let stopGame = false;
 
   // create function to choose random mole in hole
   function randomHole() {
@@ -69,8 +70,21 @@
     // remove mole after time
     setTimeout(function() {
       mole.classList.remove('up');
-      peep();
+      // keep showing moles if stop game is false
+      if (!stopGame) peep();
     }, time);
+  }
+
+  // create function that starts game
+  function startGame() {
+    stopGame = false;
+    // show moles
+    peep();
+    // stop game after 10 secs
+    setTimeout(function() {
+      console.log('stop game');
+      stopGame = true;
+    }, 10000);
   }
 </script>
 </body>
