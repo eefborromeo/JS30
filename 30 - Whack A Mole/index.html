@@ -38,6 +38,7 @@
   const moles = document.querySelectorAll('.mole');
   let lastHole;
   let stopGame = false;
+  let score;
 
   // create function to choose random mole in hole
   function randomHole() {
@@ -53,12 +54,12 @@
     lastHole = hole;
     return hole;
   }
-
+  
   // create function that gives a random time
   function randomTime(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
-
+  
   // create function that shows mole from hole
   function peep() {
     // get random time
@@ -74,10 +75,14 @@
       if (!stopGame) peep();
     }, time);
   }
-
+  
   // create function that starts game
   function startGame() {
     stopGame = false;
+    // set / reset score to 0
+    score = 0;
+    // show score on scoreboard
+    scoreBoard.textContent = score;
     // show moles
     peep();
     // stop game after 10 secs
@@ -86,6 +91,18 @@
       stopGame = true;
     }, 10000);
   }
+
+  // update scoreboard if mole is clicked
+  moles.forEach(mole =>
+  mole.addEventListener('click', function(e) {
+      if (e.isTrusted) {
+        // update score
+        score++;
+        // show score
+        scoreBoard.textContent = score;
+      }
+    })
+);
 </script>
 </body>
 </html>
