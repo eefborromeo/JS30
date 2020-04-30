@@ -47,15 +47,30 @@
     // get another hole if the same hole appears consecutively
     if (lastHole === hole) {
       console.log('the same hole');
-      randomHole();
+      return randomHole();
     }
-    console.log(hole);
     lastHole = hole;
+    return hole;
   }
 
   // create function that gives a random time
   function randomTime(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  // create function that shows mole from hole
+  function peep() {
+    // get random time
+    const time = randomTime(200, 1000);
+    // get random mole
+    const mole = randomHole();
+    // show mole
+    mole.classList.add('up');
+    // remove mole after time
+    setTimeout(function() {
+      mole.classList.remove('up');
+      peep();
+    }, time);
   }
 </script>
 </body>
