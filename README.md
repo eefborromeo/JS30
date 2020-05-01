@@ -15,9 +15,9 @@ Some of the concepts I learned during this challenge include (but not limited to
 Each project has my notes which expands on what I've learned and the struggles I encountered in completing the project.
 
 ## Table of Contents
-1. JavaScript Drum Kit
-2. JS + CSS Clock
-3. CSS Variables
+1. [JavaScript Drum Kit](../master/01%20-%20JavaScript%20Drum%20Kit)
+2. [JS + CSS Clock](../master/02%20-%20JS%20and%20CSS%20Clock)
+3. [CSS Variables](../master/03%20-%20CSS%20Variables)
 4. Array Cardio, Day 1
 5. Flex Panel Gallery
 6. Type Ahead
