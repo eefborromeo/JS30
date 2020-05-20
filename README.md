@@ -32,7 +32,7 @@ Each project has my notes which expands on what I've learned and the struggles I
 15. [LocalStorage](../master/15%20-%20LocalStorage)
 16. [Mouse Move Shadow](../master/16%20-%20Mouse%20Move%20Shadow)
 17. [Sort Without Articles](../master/17%20-%20Sort%20Without%20Articles)
-18. Adding Up Times with Reduce
+18. [Adding Up Times with Reduce](../master/18%20-%20Adding%20Up%20Times%20with%20Reduce)
 19. Webcam Fun
 20. Speech Detection
 21. Geolocation
